@@ -33,8 +33,13 @@ export class UsersService {
 
     findAll(param: any) {
         if (param.role) {
-            const roleArray = this._users.filter((user) => user.role === param.role);
-            if(!roleArray.length) throw new NotFoundException(`User ${param.role} role not found`);
+            const roleArray = this._users.filter(
+                (user) => user.role === param.role,
+            );
+            if (!roleArray.length)
+                throw new NotFoundException(
+                    `User ${param.role} role not found`,
+                );
             return roleArray;
         }
 
@@ -43,7 +48,7 @@ export class UsersService {
 
     findOne(id: number) {
         const user = this._users.find((user) => user.id === id);
-        if(!user) throw new NotFoundException(`User ${id} not found`);
+        if (!user) throw new NotFoundException(`User ${id} not found`);
         return user;
     }
 
