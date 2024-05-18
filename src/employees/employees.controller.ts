@@ -16,7 +16,7 @@ import { Prisma, Role } from '@prisma/client';
 import { SkipThrottle, Throttle } from '@nestjs/throttler';
 import { MyLoggerService } from 'src/my-logger/my-logger.service';
 
-@SkipThrottle()
+// @SkipThrottle()
 @Controller('employees')
 export class EmployeesController {
 	constructor(private readonly employeesService: EmployeesService) {}
